@@ -1,0 +1,50 @@
+{
+  "blender_version": "4.5.13 LTS",
+  "blend_file": "blender/optics-lab.blend",
+  "reproducible_script": "blender/build_scenes.py",
+  "render_engine": "Cycles CPU",
+  "samples": 96,
+  "denoising": true,
+  "resolution": [
+    1440,
+    900
+  ],
+  "scenes": [
+    {
+      "name": "01_Double_Slit",
+      "render": "assets/renders/double-slit.png",
+      "parameters": {
+        "lambda_nm": 550,
+        "d_mm": 0.25,
+        "a_mm": 0.05,
+        "L_m": 1.5,
+        "physical_screen_half_width_mm": 24,
+        "geometry_scale": "slits enlarged independently for teaching"
+      }
+    },
+    {
+      "name": "02_Refraction_Interface",
+      "render": "assets/renders/lens-bench.png",
+      "parameters": {
+        "n1": 1.0,
+        "n2": 1.52,
+        "incidence_deg": 35.0,
+        "refraction_deg": 22.1698124296528
+      }
+    },
+    {
+      "name": "03_Polarization",
+      "render": "assets/renders/polarization.png",
+      "parameters": {
+        "I0_after_first_polarizer": 1.0,
+        "analyzer_angle_deg": 45.0,
+        "transmission": 0.5
+      }
+    }
+  ],
+  "limitations": [
+    "Authored ray tubes and electric-field shapes are enlarged teaching guides.",
+    "Cycles does not solve coherent wave interference: an analytical Fraunhofer image is embedded in the screen.",
+    "Scene custom properties record parameters. Rerun the build script after editing constants to regenerate dependent geometry."
+  ]
+}

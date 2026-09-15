@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "browser": "Chrome via Playwright",
+  "date": "2026-09-14",
+  "moduleCount": 14,
+  "checks": {
+    "allModulesLoad": true,
+    "allControlCountsMatch": true,
+    "allSectionCanvasesNonblank": true,
+    "allThreeDimensionalViewsSwitch": true,
+    "allModuleFormulasPresent": true,
+    "uncaughtPageErrors": 0,
+    "doubleSlitSpacingAtDistance0_25mm": 3.3,
+    "doubleSlitSpacingAtDistance0_50mm": 1.65,
+    "comparisonCurve": true,
+    "challengeAnswer": true,
+    "sourceLinksPresent": true,
+    "resourceDialog": true,
+    "allSixResourceLinksReturn200": true,
+    "parameterDownloadAndRestore": true,
+    "csvDownload": true,
+    "phasePlaybackAndPause": true,
+    "allThreeBlenderImages1440by900": true,
+    "mobile390pxNoHorizontalOverflow": true,
+    "presentationMode": true
+  },
+  "scope": "Browser functionality and layout checks. These do not certify every possible parameter configuration or replace physical model assumptions.",
+  "previewRepair": {
+    "date": "2026-09-15",
+    "status": "PASS",
+    "localPort": 18765,
+    "all14ModuleControls": true,
+    "resourceLinks200": 6,
+    "viewportWidths": [
+      390,
+      760,
+      1024,
+      1440
+    ],
+    "horizontalOverflow": false,
+    "parametersOverlapStage": false,
+    "uncaughtPageErrors": 0,
+    "doubleSlitSpacingMm": [
+      3.3,
+      1.65
+    ],
+    "webGLAvailable": true,
+    "portCollisionFallback": true,
+    "hiddenDirectoriesBlocked": true
+  }
+}

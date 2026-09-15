@@ -1,0 +1,227 @@
+{
+  "version": "1.0.1",
+  "date": "2026-09-15",
+  "scope": "Byte hashes for the delivered ZIP; Git checkout line-ending conversion may change text-file hashes.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 277,
+      "sha256": "a924c0a7688edfca88b32c800ff6f1aa2371519ef43a89174bc110b3ee4e33fa"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 497,
+      "sha256": "8e5cf443e6ee6cd6e1e67f24a022c3ab99927951a81baccfea9a057b330c8367"
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 1205,
+      "sha256": "02f6f8eb091593d77d3db472affab48ff06adba3b4b42eafecbf2efbdb9c9762"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8102,
+      "sha256": "cbe0486b919cf80097c436c24016f31738648c47466328fa62476cc8a4291729"
+    },
+    {
+      "path": "app.js",
+      "bytes": 24779,
+      "sha256": "5154588975f76501c81595ba6d9079fb275fada086c03f57cc6c8bf00302ba1e"
+    },
+    {
+      "path": "assets/renders/double-slit.png",
+      "bytes": 1487701,
+      "sha256": "d44b54aa7b5e9b2765bd2b3ab8898aa73b146e533f2af8e9b68afa32b2045918"
+    },
+    {
+      "path": "assets/renders/lens-bench.png",
+      "bytes": 1387675,
+      "sha256": "2a9e9166b9268db2736b7866d4910509e2b2cb3448b1c53a35bd930b1c34b900"
+    },
+    {
+      "path": "assets/renders/polarization.png",
+      "bytes": 1497682,
+      "sha256": "d92910698b1bb01d823b9c509a0a0c9541db965db82adeaf61a5121ff42ed523"
+    },
+    {
+      "path": "blender/build_scenes.py",
+      "bytes": 12326,
+      "sha256": "979e9f664fa0938d7ff251dc2aa59194d17a254467c70e9b1f2deb50fd10f877"
+    },
+    {
+      "path": "blender/manifest.json",
+      "bytes": 1471,
+      "sha256": "8f18a6b69b6cf133aab0106915811d7c903b883ac93890411de634c131f9f377"
+    },
+    {
+      "path": "blender/optics-lab.blend",
+      "bytes": 18223159,
+      "sha256": "0a0a95936069c87d67c146890b880f59edff9cc7f6e8c30c18c15727ea9c2a30"
+    },
+    {
+      "path": "browser-validation.json",
+      "bytes": 1456,
+      "sha256": "331666445d1caefec2fcce04d971703feffbd6dda7b7ea6d428842d087ffe4eb"
+    },
+    {
+      "path": "index.html",
+      "bytes": 6882,
+      "sha256": "0ed4770c1ebaf61ce627c9875f0e21bb8a306cc61c6ffb054efb093bd58c3d9d"
+    },
+    {
+      "path": "lesson-content.js",
+      "bytes": 23383,
+      "sha256": "1bfce4556469c6b158909336c7b07e88cddd5721571b1c9c7e82b7224321f4a0"
+    },
+    {
+      "path": "output/playwright/diagram-circular.png",
+      "bytes": 22843,
+      "sha256": "bd1cde980226a02a99fed7c0baba25e148d7863efd63595b07db9d9fd246d612"
+    },
+    {
+      "path": "output/playwright/diagram-double.png",
+      "bytes": 33475,
+      "sha256": "24a302c681c675728a709b65610bb5404255ab51c8b6eaa7e70b412fc140a190"
+    },
+    {
+      "path": "output/playwright/diagram-film.png",
+      "bytes": 12521,
+      "sha256": "23ba60e65c5cd9a10604c76ca3e9b625d4811e35a4314b2f99fde71778855e95"
+    },
+    {
+      "path": "output/playwright/diagram-fourier.png",
+      "bytes": 25860,
+      "sha256": "b949ce82f79c068e8bd1ef1ac527a6a1c8e8282acf673e8587148819a58cedf7"
+    },
+    {
+      "path": "output/playwright/diagram-gaussian.png",
+      "bytes": 10497,
+      "sha256": "a52ddbdfdb8bf56a569b66f315b1b4a15938a88f6d71bd27d1a80a093e69b4b3"
+    },
+    {
+      "path": "output/playwright/diagram-grating.png",
+      "bytes": 23407,
+      "sha256": "b9ca9ec9e756f8380c164251f073b45af61e0a2b550c0af1768fab04df28473b"
+    },
+    {
+      "path": "output/playwright/diagram-lens.png",
+      "bytes": 21575,
+      "sha256": "4ee9fe875b8f2082a9f496eb822fc264bdbda692d525d1d7b0a603b93aec20c3"
+    },
+    {
+      "path": "output/playwright/diagram-michelson.png",
+      "bytes": 9946,
+      "sha256": "74aa6d0dfaec934e460a9349e74a69c41e459f8d948d6d3aeaa03d39f2f19686"
+    },
+    {
+      "path": "output/playwright/diagram-newton.png",
+      "bytes": 15858,
+      "sha256": "53759ec570b87c4dc0c671e08e2a50df6dc7b237c6b97faf196a31ece5130534"
+    },
+    {
+      "path": "output/playwright/diagram-polarization.png",
+      "bytes": 18684,
+      "sha256": "4b7ccf75f8757112dad6af303c318799400a35c13c142693b3fb4e4e85841908"
+    },
+    {
+      "path": "output/playwright/diagram-single.png",
+      "bytes": 22555,
+      "sha256": "78aa0143823621b7a2ab424ada54a55ceb8cad178f49cc70e304b561fb645ec7"
+    },
+    {
+      "path": "output/playwright/diagram-snell.png",
+      "bytes": 13968,
+      "sha256": "f1ba79cd0aa983c947bd05b15e5cbd95f1f7645bcdc4b64801521fe90d6899d4"
+    },
+    {
+      "path": "output/playwright/diagram-waveplate.png",
+      "bytes": 17101,
+      "sha256": "08c7b3bedacdd199879bc6578cc8124e866d3fa8567ffe9bbb687ffd1df2d299"
+    },
+    {
+      "path": "output/playwright/diagram-waves.png",
+      "bytes": 26406,
+      "sha256": "808553f6ee977c448203ef1934ac2867dbc3293f9c17746cc2989e80ab4a2133"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 7210,
+      "sha256": "3e22651cb4b3167f3b9c3630b13f7831ec241d8b57cfdce071d3fa85e52b53d8"
+    },
+    {
+      "path": "package.json",
+      "bytes": 396,
+      "sha256": "fc1c1f0df5ff368502ddac407bbdbc5eff62568838bcd717739b46dd3aca7040"
+    },
+    {
+      "path": "physics-tests.cjs",
+      "bytes": 5216,
+      "sha256": "18a177f7e9c7e0e2c40e9b948258adcc65ee0d36afd9b84e45a8586ecf49bd5f"
+    },
+    {
+      "path": "physics-validation.json",
+      "bytes": 8303,
+      "sha256": "2b2263ea695915d0d6c89166008248945dccec8178e5c0e5ebab4e1654cd4c58"
+    },
+    {
+      "path": "physics.js",
+      "bytes": 14549,
+      "sha256": "dd607dee1ac7154eaf0c719a2187c07c3257cce9a852fb7582544938589f5839"
+    },
+    {
+      "path": "scenes.js",
+      "bytes": 24575,
+      "sha256": "242192a65a8798dde83f2b0f1ca711696f1bb05d7c178217a113f17ae0ccabbe"
+    },
+    {
+      "path": "serve.cjs",
+      "bytes": 3389,
+      "sha256": "febf8fbfc07119b8d1e530bb7dee0ce68da256d2828aae928224faa6bd88de20"
+    },
+    {
+      "path": "start-preview.ps1",
+      "bytes": 1697,
+      "sha256": "648cb6ca4a41f973d15d4d170ef71eecfa43e446b783baaafd5e4fbeb4688d05"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 16962,
+      "sha256": "e7d0e2d7604341e3b1bdf0a07e3c9ad108c728b6f061be8b9221155a3ca0b8d1"
+    },
+    {
+      "path": "teaching/build_ppt.js",
+      "bytes": 11785,
+      "sha256": "5ce99286d495c262dd85447ff105cf05b4e19db120048ce67f5eb463a61e4cda"
+    },
+    {
+      "path": "teaching/optics-lecture.pdf",
+      "bytes": 1148251,
+      "sha256": "0944b84e0367c834cde29454d7a29bc8d23b5fab9cfd6358c2ea5093517ddd21"
+    },
+    {
+      "path": "teaching/optics-lecture.pptx",
+      "bytes": 6735672,
+      "sha256": "ea2c7502459a7818a63e9331bac7f25042354789b4106933735e6e00578e4cca"
+    },
+    {
+      "path": "teaching/teaching-guide.md",
+      "bytes": 19595,
+      "sha256": "c8defc2c8493fcb257380b143b765da58e403568a65385e20965b9a475c3bf52"
+    },
+    {
+      "path": "vendor/THREE-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+    },
+    {
+      "path": "vendor/three.min.js",
+      "bytes": 669884,
+      "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa"
+    },
+    {
+      "path": "打开光学课件.cmd",
+      "bytes": 113,
+      "sha256": "8597da58849423d12b13e7d1b4e4b677772617201f14954ea50b6db17216efd4"
+    }
+  ]
+}

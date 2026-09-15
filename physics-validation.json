@@ -1,0 +1,367 @@
+{
+  "status": "PASS",
+  "checks": 8884,
+  "benchmarkCount": 60,
+  "benchmarks": [
+    {
+      "test": "sinc removable zero",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "sinc first null",
+      "actual": 3.8981718325193755e-17,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Bessel J1 reference x=1",
+      "actual": 0.4400505857449335,
+      "expected": 0.4400505857449335,
+      "tolerance": 2e-10
+    },
+    {
+      "test": "Bessel J1 reference x=5",
+      "actual": -0.32757913759146506,
+      "expected": -0.3275791375914652,
+      "tolerance": 2e-10
+    },
+    {
+      "test": "Bessel J1 reference x=10",
+      "actual": 0.04347274616879089,
+      "expected": 0.04347274616886144,
+      "tolerance": 2e-10
+    },
+    {
+      "test": "Bessel J1 reference x=12",
+      "actual": -0.22344710449157862,
+      "expected": -0.2234471044906276,
+      "tolerance": 2e-10
+    },
+    {
+      "test": "Bessel J1 reference x=20",
+      "actual": 0.06683312417585033,
+      "expected": 0.06683312417585005,
+      "tolerance": 2e-10
+    },
+    {
+      "test": "Bessel J1 reference x=100",
+      "actual": -0.07714535201411228,
+      "expected": -0.07714535201411216,
+      "tolerance": 2e-10
+    },
+    {
+      "test": "Airy origin",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Airy first null q=3.8317059702",
+      "actual": 8.031319313573457e-34,
+      "expected": 0,
+      "tolerance": 1e-18
+    },
+    {
+      "test": "Snell air/glass 30deg",
+      "actual": 19.471220634490688,
+      "expected": 19.47122063449069,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Normal-incidence glass R",
+      "actual": 0.04000000000000001,
+      "expected": 0.04,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Brewster p reflection vanishes",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "TIR energy reflection",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Thin lens 300/100 gives150mm",
+      "actual": 150,
+      "expected": 150,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Thin lens virtual image",
+      "actual": -100,
+      "expected": -100,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Equal waves destructive",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Unequal waves destructive",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Double slit textbook spacing",
+      "actual": 5.064,
+      "expected": 5.064,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Double slit central unity",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Incoherent double slit center half coherent maximum",
+      "actual": 0.5,
+      "expected": 0.5,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Double slit phase pi dark center",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N2 m-3",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N2 m-1",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N2 m0",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N2 m1",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N2 m3",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N20 m-3",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N20 m-1",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N20 m0",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N20 m1",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N20 m3",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N500 m-3",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N500 m-1",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N500 m0",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N500 m1",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating limiting principal peak N500 m3",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating first subsidiary null",
+      "actual": 1.5321342793109658e-33,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Grating envelope at first principal peak",
+      "actual": 0.8105694691387021,
+      "expected": 0.8105694691387021,
+      "tolerance": 1e-11
+    },
+    {
+      "test": "Zero film thickness collapses interfaces",
+      "actual": 0.039999999999999994,
+      "expected": 0.04,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Quarter-wave impedance matching AR",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Matched film no reflection",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Newton reflected contact dark",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Newton transmitted contact bright",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Newton first dark ring",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Michelson zero OPD all inclinations bright",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Michelson halfwave OPD center dark",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Michelson fullwave OPD center bright",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Single slit exact angular first zero",
+      "actual": 3.25224088994078e-32,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Circular single source center",
+      "actual": 1,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Circular 2D horizontal section matches profile",
+      "actual": 0.4430299020950203,
+      "expected": 0.4430299020950203,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Malus 60deg",
+      "actual": 0.2500000000000001,
+      "expected": 0.25,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Three polarizers at 0,45,90deg",
+      "actual": 0.2500000000000001,
+      "expected": 0.25,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Quarterwave circle ratio",
+      "actual": 0.9999999999999999,
+      "expected": 1,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Halfwave is linear",
+      "actual": 4.329780281177466e-17,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Zero-axis waveplate always linear",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Gaussian waist value",
+      "actual": 0.0005,
+      "expected": 0.0005,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Gaussian radius at Rayleigh range",
+      "actual": 0.0007071067811865476,
+      "expected": 0.0007071067811865476,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Gaussian 1/e² radius",
+      "actual": 0.1353352832366127,
+      "expected": 0.1353352832366127,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Fourier first null",
+      "actual": 1.5195743635847466e-33,
+      "expected": 0,
+      "tolerance": 1e-10
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "university-optics-lab",
+  "version": "1.0.1",
+  "private": true,
+  "description": "大学物理光学互动课件、教学幻灯片与 Blender 场景",
+  "scripts": {
+    "start": "node serve.cjs",
+    "test": "node physics-tests.cjs",
+    "build:slides": "node teaching/build_ppt.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "pptxgenjs": "4.0.1"
+  }
+}

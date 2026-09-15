@@ -1,0 +1,28 @@
+# Downloaded tools, dependencies and local browser artifacts
+tools/
+node_modules/
+.playwright-cli/
+.preview/
+.optics-preview*
+*.log
+*.pid
+*.blend1
+*.blend2
+
+# Generated QA artifacts; retain the diagrams used by the slide generator
+output/*
+!output/playwright/
+output/playwright/*
+!output/playwright/diagram-*.png
+teaching/preview/
+teaching/大学物理光学可视化课件.pptx
+
+# Local credentials and operating-system files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
+desktop.ini
