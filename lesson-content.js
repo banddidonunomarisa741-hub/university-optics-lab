@@ -332,7 +332,7 @@ const lessons={
       {
         "label": "窄缝",
         "values": {
-          "a": 0.1,
+          "a": 0.05,
           "lambda": 500,
           "L": 1
         }

@@ -66,5 +66,29 @@
     "filterSelect": true,
     "logScaleButton": true,
     "mobileOverflow": false
+  },
+  "fullSiteB": {
+    "status": "PASS",
+    "directoryScrollIntoView": true,
+    "renderTabs": {
+      "double": true,
+      "snell": true,
+      "polarization": true,
+      "lens": false,
+      "film": false,
+      "waveplate": false
+    },
+    "mobileDrawer": {
+      "fixed": true,
+      "plotVisibleWhenExpanded": true,
+      "horizontalOverflow": false
+    },
+    "threeLabelScaling": {
+      "minimumCssPixels": 12
+    },
+    "presetAudit": {
+      "singleNarrowSlitCorrected": true,
+      "fourierConstraints": true
+    }
   }
 }

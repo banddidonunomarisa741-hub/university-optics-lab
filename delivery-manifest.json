@@ -35,8 +35,8 @@
     },
     {
       "path": "app.js",
-      "bytes": 29946,
-      "sha256": "3c06691fb64f188d4e6a1a3cb6d938ba58546914ab8403c5575c4b3c621926a0"
+      "bytes": 31293,
+      "sha256": "9c1a2cf2f8d62b3376149352927eb026e7ba386ad0453896dd9d29ff46b511e0"
     },
     {
       "path": "assets/renders/double-slit.png",
@@ -70,18 +70,23 @@
     },
     {
       "path": "browser-validation.json",
-      "bytes": 1858,
-      "sha256": "78723d99d275a30e709926f0a78e5760845823c595662cd4c035b6f26150d398"
+      "bytes": 2391,
+      "sha256": "d906f5b0864e11bbfe12fe4b7bec1ce1b1b35502a244e9dfee8e9a96a86942ae"
     },
     {
       "path": "index.html",
-      "bytes": 7341,
-      "sha256": "d2853e68df201b601afa9a34405d3724b03f8831e2abfecf1f3ad909060f3d95"
+      "bytes": 7495,
+      "sha256": "76c916992e24dcf4feebbe9297485261113f100af0cee8b0db7e511f6e22c635"
     },
     {
       "path": "lesson-content.js",
-      "bytes": 24287,
-      "sha256": "0572a87ceb6565c943b71b2dc3a5aa408e5f9c752712d057070f3d11a1c6e38c"
+      "bytes": 24288,
+      "sha256": "7d91764a3e93d51ca47f15d13b63a6ef4e576a865b7972e2ecb60bc6bc8b5621"
+    },
+    {
+      "path": "mobile-open3.png",
+      "bytes": 65238,
+      "sha256": "dbb3bda303587fad20bf0c98b2ba7276ea02c371988ca394ffa6a91ce24c8443"
     },
     {
       "path": "netlify.toml",
@@ -180,13 +185,13 @@
     },
     {
       "path": "physics.js",
-      "bytes": 23202,
-      "sha256": "b605a7edc59e87cce58371d8ac071cc4bb1395c5538d3fae050e837cce424762"
+      "bytes": 23394,
+      "sha256": "f38f0ab73d8edb2336ce8f7ecd3aa0cfb6faa6a272ee8199ae9d0f79ba59453e"
     },
     {
       "path": "scenes.js",
-      "bytes": 27104,
-      "sha256": "e14922e871355e2dd186452f693176a9f9ccfe2557648e1722d17ee0ae8fd043"
+      "bytes": 27970,
+      "sha256": "bccfcdc05029fab33ea45f1eecb3b089b543004bc7972707ad66324d34f0d79f"
     },
     {
       "path": "serve.cjs",
@@ -200,8 +205,8 @@
     },
     {
       "path": "styles.css",
-      "bytes": 17101,
-      "sha256": "6b822d7d730eb0f337f5396ace0ceea364d2f7bc7edeabcc559eba97f9754bc4"
+      "bytes": 18272,
+      "sha256": "6c4e0740fb70fa6d2ccecae95482aa3583f562d1b3b5d44950b6f25e677f6e89"
     },
     {
       "path": "teaching/build_ppt.js",
