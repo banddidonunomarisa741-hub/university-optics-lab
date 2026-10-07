@@ -27,7 +27,7 @@
             <canvas id="scene" role="img" aria-label="可旋转的三维光学实验装置，左键拖动旋转，滚轮缩放"></canvas>
             <canvas id="diagram" role="img" aria-label="当前实验的光路或电场定量剖面图" hidden></canvas>
             <canvas id="fourier-panel" role="img" aria-label="输入孔径、二维频谱和4f空间滤波输出图样" hidden></canvas>
-            <div id="render-view" hidden><img id="blender-image" alt="由 Blender 渲染的光学实验装置"><div class="render-caption" id="render-caption"></div></div>
+            <div id="render-view" hidden><picture id="blender-picture"><source id="blender-webp" type="image/webp"><img id="blender-image" alt="由 Blender 渲染的光学实验装置"></picture><div class="render-caption" id="render-caption"></div></div>
             <div class="stage-caption"><span class="stage-dot"></span><span id="stage-label">实时计算 · 示意空间尺度</span></div>
             <div class="stage-bottom"><span id="interaction-hint">拖动旋转 · 滚轮缩放</span><div><button id="snapshot" title="下载当前观察图">保存图像</button><button id="play" aria-pressed="false">▶ 播放演示</button></div></div>
           </div>

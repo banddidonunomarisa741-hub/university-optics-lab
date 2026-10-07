@@ -13,6 +13,7 @@
     {
       "name": "01_Double_Slit",
       "render": "assets/renders/double-slit.png",
+      "render_webp": "assets/renders/double-slit.webp",
       "parameters": {
         "lambda_nm": 550,
         "d_mm": 0.25,
@@ -25,10 +26,11 @@
     {
       "name": "02_Refraction_Interface",
       "render": "assets/renders/lens-bench.png",
+      "render_webp": "assets/renders/lens-bench.webp",
       "parameters": {
-        "n1": 1.0,
+        "n1": 1,
         "n2": 1.52,
-        "incidence_deg": 35.0,
+        "incidence_deg": 35,
         "refraction_deg": 22.1698124296528,
         "total_internal_reflection": false
       }
@@ -36,10 +38,25 @@
     {
       "name": "03_Polarization",
       "render": "assets/renders/polarization.png",
+      "render_webp": "assets/renders/polarization.webp",
       "parameters": {
-        "I0_after_first_polarizer": 1.0,
-        "analyzer_angle_deg": 45.0,
+        "I0_after_first_polarizer": 1,
+        "analyzer_angle_deg": 45,
         "transmission": 0.5000000000000001
+      }
+    },
+    {
+      "name": "04_Fourier_4f",
+      "render": "assets/renders/fourier-4f.png",
+      "render_webp": "assets/renders/fourier-4f.webp",
+      "parameters": {
+        "lambda_nm": 550,
+        "f_mm": 200,
+        "a_mm": 0.1,
+        "b_mm": 0.1,
+        "aperture": "rectangle",
+        "filter": "none",
+        "filter_size_mm_inv": 1
       }
     }
   ],
@@ -48,6 +65,7 @@
     "Cycles does not solve coherent wave interference: an analytical Fraunhofer image is embedded in the screen.",
     "Rendered emission brightness is a visual map, not linear irradiance; the double-slit screen uses display sqrt(I).",
     "Ray-tube thickness and brightness do not encode Fresnel power or polarization intensity.",
-    "Scene custom properties record parameters. Rerun the build script after editing constants to regenerate dependent geometry."
+    "Scene custom properties record parameters. Rerun the build script after editing constants to regenerate dependent geometry.",
+    "The Fourier 4f scene embeds analytical DISPLAY textures; Blender does not calculate diffraction or filtering."
   ]
 }

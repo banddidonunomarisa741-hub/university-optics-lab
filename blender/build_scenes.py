@@ -5,7 +5,7 @@ The screen texture is calculated separately from the scalar Fraunhofer model.
 """
 import bpy, math, os, json
 from mathutils import Vector
-from math import pi, sin, cos, sqrt
+from math import pi, sin, cos, sqrt, log
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT=os.path.join(BASE,'assets','renders')
 os.makedirs(OUT,exist_ok=True)
@@ -160,17 +160,58 @@ for side,(x0,x1,angle,amplitude,ma) in enumerate([(-1.3,.95,0,.38,cyan),(1.25,3.
 label('Output ratio','I / I0 = cos^2(%.0f deg) = %.2f'%(analyzer_angle,polarization_params['transmission']),(1,-1.4,2.8),.18)
 label('Scene title','POLARIZATION / FIELD PROJECTION',(0,-2.07,.35),.21)
 
-names=[('01_Double_Slit','double-slit.png'),('02_Refraction_Interface','lens-bench.png'),('03_Polarization','polarization.png')]
+def fourier_display_image(name,mode='spectrum',size=256,lambda_nm=550,f_mm=200,a_mm=.10,b_mm=.10):
+    span_mm=2.0;lam=lambda_nm*1e-9;f=f_mm*1e-3;a=a_mm*1e-3;b=b_mm*1e-3
+    image=bpy.data.images.new(name,width=size,height=size,alpha=True);pixels=[];max_i=0;values=[]
+    for y in range(size):
+        for x in range(size):
+            xx=(x-size/2)/(size*(span_mm*1e-3));yy=(y-size/2)/(size*(span_mm*1e-3))
+            aperture=1 if abs(xx)<=a/2 and abs(yy)<=b/2 else 0
+            nu_x=xx/(lam*f);nu_y=yy/(lam*f)
+            bx=pi*a*nu_x;by=pi*b*nu_y
+            sx=1 if abs(bx)<1e-12 else sin(bx)/bx;sy=1 if abs(by)<1e-12 else sin(by)/by
+            spectrum=(sx*sx)*(sy*sy)
+            value=aperture if mode=='input' else spectrum
+            values.append(value)
+            max_i=max(max_i,value)
+    for value in values:
+        q=value/(max_i or 1);q=sqrt(max(0,q)) if mode!='spectrum' else log(1+500*value)/log(1+500*(max_i or 1))
+        pixels.extend((.02+.25*q,.08+.72*q,.12+.82*q,1))
+    image.pixels=pixels;image.pack();return image
+def image_material(name,image):
+    m=bpy.data.materials.new(name);m.use_nodes=True;n=m.node_tree.nodes;n.clear();tex=n.new('ShaderNodeTexImage');tex.image=image;em=n.new('ShaderNodeEmission');em.inputs['Strength'].default_value=.9;out=n.new('ShaderNodeOutputMaterial');m.node_tree.links.new(tex.outputs['Color'],em.inputs['Color']);m.node_tree.links.new(em.outputs[0],out.inputs['Surface']);return m
+def fourier_screen(name,x,image,caption):
+    cube(name+' body',(x,1,0),(.12,1.9,1.9),metal,.045)
+    bpy.ops.mesh.primitive_plane_add(size=1.6,location=(x-.071,1,0),rotation=(0,pi/2,0));o=bpy.context.object;o.name=name+' calculated texture';o.data.materials.append(image_material(name+' DISPLAY material',image));label(name+' caption',caption,(x,2.05,0),.14);return o
+def lens_element(name,x):
+    mount(x,0,1.25);bpy.ops.mesh.primitive_uv_sphere_add(segments=48,ring_count=24,location=(x,1.25,0));o=bpy.context.object;o.name=name;o.scale=(.16,.72,.72);o.data.materials.append(glass);return o
+
+fourier_params={'lambda_nm':550.,'f_mm':200.,'a_mm':.10,'b_mm':.10,'aperture':'rectangle','filter':'none','filter_size_mm_inv':1.0}
+sc=setup('04_Fourier_4f')
+for key,value in fourier_params.items(): sc[key]=value
+source(-3.55);mount(-2.25,0,1.25);cube('Fourier aperture plate',(-2.25,1.25,0),(.1,1.5,1.5),metal,.02);label('Fourier aperture caption','APERTURE · RECTANGLE',(-2.25,2.18,0),.14)
+lens_element('Fourier lens 1',-.75);spectrum_image=fourier_display_image('Fourier spectrum DISPLAY',mode='spectrum',lambda_nm=fourier_params['lambda_nm'],f_mm=fourier_params['f_mm'],a_mm=fourier_params['a_mm'],b_mm=fourier_params['b_mm']);fourier_screen('Fourier spectrum plane',.65,spectrum_image,'FOURIER PLANE · DISPLAY |F|²')
+cube('Filter carrier',(.65,.14,0),(.12,.18,1.8),metal,.015);label('Filter label','FILTER SLOT · OPTIONAL',(.65,.18,1.15),.11)
+lens_element('Fourier lens 2',1.75);input_image=fourier_display_image('Fourier input DISPLAY',mode='input',lambda_nm=fourier_params['lambda_nm'],f_mm=fourier_params['f_mm'],a_mm=fourier_params['a_mm'],b_mm=fourier_params['b_mm']);fourier_screen('Fourier image plane',3.05,input_image,'IMAGE PLANE · DISPLAY |Uout|²')
+ray('4f incident guide',(-3.15,1.25,0),(-2.3,1.25,0),green,.022)
+for z in [-.55,0,.55]:
+    ray('4f parallel ray',(-2.18,1.25,z),(-.75,1.25,z),cyan,.009);ray('4f converging ray',(-.75,1.25,z),(.65,1.25,z*.15),cyan,.009);ray('4f diverging ray',(.65,1.25,z*.15),(1.75,1.25,z),cyan,.009);ray('4f output ray',(1.75,1.25,z),(2.98,1.25,z),cyan,.009)
+label('Scene title','FOURIER OPTICS / 4f FILTERING',(0,-2.07,.35),.21)
+
+names=[('01_Double_Slit','double-slit.png'),('02_Refraction_Interface','lens-bench.png'),('03_Polarization','polarization.png'),('04_Fourier_4f','fourier-4f.png')]
 bpy.context.window.scene=bpy.data.scenes['01_Double_Slit']
 # Embedded scientific notes and editable custom values accompany named geometry.
 notes=bpy.data.texts.new('READ ME - models and controls')
 notes.write('Each scene has custom properties documenting parameters. Edit constants in build_scenes.py and rerun to regenerate dependent geometry and screen texture. Custom properties record values; they are not automatic drivers. Dimensions of apertures, apparatus and rays are independently enlarged for teaching. Cycles path tracing renders material/lighting, not coherent wave diffraction. Double slit uses exact sin(theta)=y/hypot(L,y), Fraunhofer model, and square-root display brightness. Default double slit: lambda %.0fnm, d %.3fmm, a %.3fmm, L %.2fm; screen crop ±%.0fmm. Default refraction: n1=%.2f, n2=%.2f, incidence %.2fdeg. Default polarizer analyzer angle %.2fdeg; field amplitude after analyzer is multiplied by cos(angle). Classical scalar idealized models only.' % (double_params['lambda_nm'],double_params['d_mm'],double_params['a_mm'],double_params['L_m'],screen_half_width_mm,refraction_params['n1'],refraction_params['n2'],refraction_params['incidence_deg'],polarization_params['analyzer_angle_deg']))
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(BASE,'blender','optics-lab.blend'))
-manifest={'blender_version':bpy.app.version_string,'blend_file':'blender/optics-lab.blend','reproducible_script':'blender/build_scenes.py','render_engine':'Cycles CPU','samples':96,'denoising':True,'resolution':[1440,900],'scenes':[],'limitations':['Authored ray tubes and electric-field shapes are enlarged teaching guides.','Cycles does not solve coherent wave interference: an analytical Fraunhofer image is embedded in the screen.','Rendered emission brightness is a visual map, not linear irradiance; the double-slit screen uses display sqrt(I).','Ray-tube thickness and brightness do not encode Fresnel power or polarization intensity.','Scene custom properties record parameters. Rerun the build script after editing constants to regenerate dependent geometry.']}
+manifest={'blender_version':bpy.app.version_string,'blend_file':'blender/optics-lab.blend','reproducible_script':'blender/build_scenes.py','render_engine':'Cycles CPU','samples':96,'denoising':True,'resolution':[1440,900],'scenes':[],'limitations':['Authored ray tubes and electric-field shapes are enlarged teaching guides.','Cycles does not solve coherent wave interference: an analytical Fraunhofer image is embedded in the screen.','Rendered emission brightness is a visual map, not linear irradiance; the double-slit screen uses display sqrt(I).','Ray-tube thickness and brightness do not encode Fresnel power or polarization intensity.','The Fourier 4f scene embeds analytical DISPLAY textures; Blender does not calculate diffraction or filtering.','Scene custom properties record parameters. Rerun the build script after editing constants to regenerate dependent geometry.']}
 for scene_name,filename in names:
-    s=bpy.data.scenes[scene_name];bpy.context.window.scene=s;s.render.filepath=os.path.join(OUT,filename)
-    bpy.ops.render.render(write_still=True)
-    manifest['scenes'].append({'name':scene_name,'render':'assets/renders/'+filename,'parameters':{k:v for k,v in s.items() if isinstance(v,(str,int,float,bool))}})
+    s=bpy.data.scenes[scene_name];bpy.context.window.scene=s
+    png_path=os.path.join(OUT,filename);webp_path=os.path.splitext(png_path)[0]+'.webp'
+    s.render.image_settings.file_format='PNG';s.render.filepath=png_path;bpy.ops.render.render(write_still=True)
+    s.render.image_settings.file_format='WEBP';s.render.image_settings.quality=82;s.render.filepath=webp_path;bpy.ops.render.render(write_still=True)
+    s.render.image_settings.file_format='PNG'
+    manifest['scenes'].append({'name':scene_name,'render':'assets/renders/'+filename,'render_webp':'assets/renders/'+os.path.basename(webp_path),'parameters':{k:v for k,v in s.items() if isinstance(v,(str,int,float,bool))}})
 with open(os.path.join(BASE,'blender','manifest.json'),'w',encoding='utf-8') as f:json.dump(manifest,f,ensure_ascii=False,indent=2)
 bpy.context.window.scene=bpy.data.scenes['01_Double_Slit']
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(BASE,'blender','optics-lab.blend'))

@@ -30,63 +30,83 @@
     },
     {
       "path": "README.md",
-      "bytes": 8662,
-      "sha256": "4b81f03ac4a9a216bbaacb36b3f1f1977ac73e544f33af3febf80b8489d21008"
+      "bytes": 8972,
+      "sha256": "b776466152fc9ce719de2f5338f6346e4a3f827d6169874eb05a62e632995ca2"
     },
     {
       "path": "app.js",
-      "bytes": 31293,
-      "sha256": "9c1a2cf2f8d62b3376149352927eb026e7ba386ad0453896dd9d29ff46b511e0"
+      "bytes": 31473,
+      "sha256": "b02794eb89f81ed8e6cfcf73843b9f1e82b37463b6d333540f85db93f3f47981"
     },
     {
       "path": "assets/renders/double-slit.png",
       "bytes": 1491636,
-      "sha256": "90dc4f80cf9e8131a07a71c297ea217327cbbf46019bbde38a73e82367eab839"
+      "sha256": "1c81726122608b80f654be612179bf1af8c4ff822f1ef9e43e540481d4306b2a"
+    },
+    {
+      "path": "assets/renders/double-slit.webp",
+      "bytes": 48972,
+      "sha256": "3ef28500443f9110bf86a7f8889654a8deeb5607c5eb962185c35a0ed4f8eac4"
+    },
+    {
+      "path": "assets/renders/fourier-4f.png",
+      "bytes": 1449484,
+      "sha256": "065eeace1f6e9d30d55f18c667f1186b2cc547867fc34a9f713d17b28c5e23c5"
+    },
+    {
+      "path": "assets/renders/fourier-4f.webp",
+      "bytes": 40950,
+      "sha256": "a555afc3cc6ea7eed970e97c59b935fbf726266038f8d0846481e19662368027"
     },
     {
       "path": "assets/renders/lens-bench.png",
       "bytes": 1394564,
-      "sha256": "1f14702c748264dcc3af8c178057926b47d592397d1b70270311800b39f654e2"
+      "sha256": "75452cb36f1f695942358d544edad4fa3f3aa990343a2d36fd1089c1877a5d27"
+    },
+    {
+      "path": "assets/renders/lens-bench.webp",
+      "bytes": 32720,
+      "sha256": "947ab074736015516d8b34e3bfc57485972cbc42008088d9906d724d8f20ed48"
     },
     {
       "path": "assets/renders/polarization.png",
       "bytes": 1497682,
-      "sha256": "1379e5f6e7775f9bcff2cc7ba5edc7cc38a24bdf167862ca46fd97bddc15ea91"
+      "sha256": "847769759cc351308fc48ef06de4443a0452e2e56ef6e086edeb9b83badee4f6"
+    },
+    {
+      "path": "assets/renders/polarization.webp",
+      "bytes": 52472,
+      "sha256": "813b16fb9354db0721adc539b9ab624ec0397dc3de6e1b0f507962b9469195a7"
     },
     {
       "path": "blender/build_scenes.py",
-      "bytes": 14049,
-      "sha256": "a36f45bcac49c603ded1446eb210c4900c81a486215928e5aee2732daf78fd5b"
+      "bytes": 18241,
+      "sha256": "f5014998615ef847490919e48ed0c6cc18659339675e9635bef9e401e0b9d983"
     },
     {
       "path": "blender/manifest.json",
-      "bytes": 1750,
-      "sha256": "bb8947705bed61e53c002f9b78582722d0694a0600d1f106ea64a03a80d64efa"
+      "bytes": 2334,
+      "sha256": "2c0e786e4105a6293a26e08a4bb36338825e7ddad13fdd5d5d3b76229d31aa37"
     },
     {
       "path": "blender/optics-lab.blend",
-      "bytes": 18225974,
-      "sha256": "bf3e8b30db918cc4451046416a2209cb86b9c5d1bab81990a3c234fe655a1d5b"
+      "bytes": 23290600,
+      "sha256": "321ef93bb5dbb3d4a11465bda6d1a29ad5fedb7289c6974433d261f07214275d"
     },
     {
       "path": "browser-validation.json",
-      "bytes": 2391,
-      "sha256": "d906f5b0864e11bbfe12fe4b7bec1ce1b1b35502a244e9dfee8e9a96a86942ae"
+      "bytes": 2563,
+      "sha256": "2e992b3fad47724abcb3c198b1c024cc087f3c79baebcebb292804bbfed9fdff"
     },
     {
       "path": "index.html",
-      "bytes": 7495,
-      "sha256": "76c916992e24dcf4feebbe9297485261113f100af0cee8b0db7e511f6e22c635"
+      "bytes": 7579,
+      "sha256": "beaa3ffc79a700e0ec3b275592c97f5fe9645cb84f7cdcabdf0bb3da3869f130"
     },
     {
       "path": "lesson-content.js",
       "bytes": 24288,
       "sha256": "7d91764a3e93d51ca47f15d13b63a6ef4e576a865b7972e2ecb60bc6bc8b5621"
-    },
-    {
-      "path": "mobile-open3.png",
-      "bytes": 65238,
-      "sha256": "dbb3bda303587fad20bf0c98b2ba7276ea02c371988ca394ffa6a91ce24c8443"
     },
     {
       "path": "netlify.toml",
@@ -191,7 +211,7 @@
     {
       "path": "scenes.js",
       "bytes": 27970,
-      "sha256": "bccfcdc05029fab33ea45f1eecb3b089b543004bc7972707ad66324d34f0d79f"
+      "sha256": "8165891bccb1653aa0380119f479747d213fc19540a48e82d9789c00c9dd4fbb"
     },
     {
       "path": "serve.cjs",

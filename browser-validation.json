@@ -90,5 +90,13 @@
       "singleNarrowSlitCorrected": true,
       "fourierConstraints": true
     }
+  },
+  "blenderC": {
+    "status": "PASS",
+    "sceneCount": 4,
+    "fourier4fScene": true,
+    "webpOutputs": 4,
+    "pictureFallback": true,
+    "fourierRenderTab": true
   }
 }

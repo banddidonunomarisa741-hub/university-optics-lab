@@ -22,7 +22,7 @@ Windows 已安装 Node.js 时，也可以双击 **打开光学课件.cmd**：它
 | `teaching/optics-lecture.pptx` | 26 页可编辑课堂幻灯片，含备注和实验链接 |
 | `teaching/optics-lecture.pdf` | 同版式的投影 / 打印版本 |
 | `teaching/teaching-guide.md` | 教学安排、模型约定、例题答案 |
-| `blender/optics-lab.blend` | 3 个命名三维场景，含材质、灯光、相机和内嵌计算纹理 |
+| `blender/optics-lab.blend` | 4 个命名三维场景，含材质、灯光、相机和内嵌计算纹理 |
 | `blender/build_scenes.py` | 重建场景及重新渲染的完整脚本 |
 | `blender/manifest.json` | Blender 版本、渲染设置、物理参数与限制说明 |
 | `assets/renders/` | 3 张 1440 × 900 Cycles 渲染图 |
@@ -67,7 +67,7 @@ Windows 已安装 Node.js 时，也可以双击 **打开光学课件.cmd**：它
 
 ## Blender 使用与重建
 
-工程含 `01_Double_Slit`、`02_Refraction_Interface`、`03_Polarization` 三个场景。使用 Blender 的场景选择器切换，相机已布置，可直接查看渲染。
+工程含 `01_Double_Slit`、`02_Refraction_Interface`、`03_Polarization`、`04_Fourier_4f` 四个场景。使用 Blender 的场景选择器切换，相机已布置，可直接查看渲染。第四个场景展示光源、孔径、透镜 1、频谱面滤波片槽、透镜 2 和倒像屏；频谱面与像屏纹理由脚本按解析 Fourier 模型嵌入。
 
 验证环境：Blender 4.5.13 LTS，Cycles CPU，96 采样，降噪，1440 × 900。光线路径和电场形状是放大后的教学标记；Cycles 负责材质与光照，**不计算相干衍射**。双缝观察屏的纹理由脚本中的解析模型计算并嵌入工程，标签明确标为 `DISPLAY SQRT(I)`：渲染亮度是可见度映射，不是线性辐照度。折射场景的光线管径和亮度同样不代表 Fresnel 功率，玻璃材质是视觉近似。
 
@@ -77,7 +77,7 @@ Windows 已安装 Node.js 时，也可以双击 **打开光学课件.cmd**：它
 blender --background --python blender/build_scenes.py
 ```
 
-脚本用自身位置定位课件目录，无固定盘符依赖。仓库包含可编辑的 `.blend` 工程和渲染成品；重新渲染需自行安装 Blender，仓库和分发 ZIP 不包含 Blender 软件本体。
+脚本用自身位置定位课件目录，无固定盘符依赖。仓库包含可编辑的 `.blend` 工程和渲染成品；重新渲染需自行安装 Blender，仓库和分发 ZIP 不包含 Blender 软件本体。每个固定渲染同时输出 1440 × 900 的 WebP（质量 82）和 PNG 回退，网页通过 `<picture>` 优先使用 WebP。
 
 ## 检查与重建说明
 
