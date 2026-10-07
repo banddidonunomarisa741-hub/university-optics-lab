@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "checks": 8884,
-  "benchmarkCount": 60,
+  "checks": 8885,
+  "benchmarkCount": 61,
   "benchmarks": [
     {
       "test": "sinc removable zero",
@@ -247,6 +247,12 @@
       "test": "Quarter-wave impedance matching AR",
       "actual": 0,
       "expected": 0,
+      "tolerance": 1e-10
+    },
+    {
+      "test": "Thin-film phase change for 300nm thickness increase",
+      "actual": 10.281575957202959,
+      "expected": 10.281575957202959,
       "tolerance": 1e-10
     },
     {

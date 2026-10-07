@@ -1,7 +1,7 @@
 {
   "version": "1.0.1",
-  "date": "2026-09-15",
-  "scope": "Byte hashes for the delivered ZIP; Git checkout line-ending conversion may change text-file hashes.",
+  "date": "2026-10-07",
+  "scope": "Byte hashes for the delivered project files; Git checkout line-ending conversion may change text-file hashes.",
   "files": [
     {
       "path": ".gitattributes",
@@ -10,8 +10,13 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 497,
-      "sha256": "8e5cf443e6ee6cd6e1e67f24a022c3ab99927951a81baccfea9a057b330c8367"
+      "bytes": 518,
+      "sha256": "f1339c31eecfd980352b22a541901ee277adf22a3c127ec582d2066726df1f49"
+    },
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "DESIGN.md",
@@ -19,9 +24,14 @@
       "sha256": "02f6f8eb091593d77d3db472affab48ff06adba3b4b42eafecbf2efbdb9c9762"
     },
     {
+      "path": "LICENSE",
+      "bytes": 1189,
+      "sha256": "5bfdccf562c9a5bb150577e64fce5c40d6c331b2c2d79334dbf78af875291605"
+    },
+    {
       "path": "README.md",
-      "bytes": 8102,
-      "sha256": "cbe0486b919cf80097c436c24016f31738648c47466328fa62476cc8a4291729"
+      "bytes": 8662,
+      "sha256": "4b81f03ac4a9a216bbaacb36b3f1f1977ac73e544f33af3febf80b8489d21008"
     },
     {
       "path": "app.js",
@@ -30,38 +40,38 @@
     },
     {
       "path": "assets/renders/double-slit.png",
-      "bytes": 1487701,
-      "sha256": "d44b54aa7b5e9b2765bd2b3ab8898aa73b146e533f2af8e9b68afa32b2045918"
+      "bytes": 1491636,
+      "sha256": "90dc4f80cf9e8131a07a71c297ea217327cbbf46019bbde38a73e82367eab839"
     },
     {
       "path": "assets/renders/lens-bench.png",
-      "bytes": 1387675,
-      "sha256": "2a9e9166b9268db2736b7866d4910509e2b2cb3448b1c53a35bd930b1c34b900"
+      "bytes": 1394564,
+      "sha256": "1f14702c748264dcc3af8c178057926b47d592397d1b70270311800b39f654e2"
     },
     {
       "path": "assets/renders/polarization.png",
       "bytes": 1497682,
-      "sha256": "d92910698b1bb01d823b9c509a0a0c9541db965db82adeaf61a5121ff42ed523"
+      "sha256": "1379e5f6e7775f9bcff2cc7ba5edc7cc38a24bdf167862ca46fd97bddc15ea91"
     },
     {
       "path": "blender/build_scenes.py",
-      "bytes": 12326,
-      "sha256": "979e9f664fa0938d7ff251dc2aa59194d17a254467c70e9b1f2deb50fd10f877"
+      "bytes": 14049,
+      "sha256": "a36f45bcac49c603ded1446eb210c4900c81a486215928e5aee2732daf78fd5b"
     },
     {
       "path": "blender/manifest.json",
-      "bytes": 1471,
-      "sha256": "8f18a6b69b6cf133aab0106915811d7c903b883ac93890411de634c131f9f377"
+      "bytes": 1750,
+      "sha256": "bb8947705bed61e53c002f9b78582722d0694a0600d1f106ea64a03a80d64efa"
     },
     {
       "path": "blender/optics-lab.blend",
-      "bytes": 18223159,
-      "sha256": "0a0a95936069c87d67c146890b880f59edff9cc7f6e8c30c18c15727ea9c2a30"
+      "bytes": 18225974,
+      "sha256": "bf3e8b30db918cc4451046416a2209cb86b9c5d1bab81990a3c234fe655a1d5b"
     },
     {
       "path": "browser-validation.json",
-      "bytes": 1456,
-      "sha256": "331666445d1caefec2fcce04d971703feffbd6dda7b7ea6d428842d087ffe4eb"
+      "bytes": 1553,
+      "sha256": "6e04958736351e8c5ab1c2c2335c016be0cdf8864eabdf2acc54fea30031afe3"
     },
     {
       "path": "index.html",
@@ -70,8 +80,13 @@
     },
     {
       "path": "lesson-content.js",
-      "bytes": 23383,
-      "sha256": "1bfce4556469c6b158909336c7b07e88cddd5721571b1c9c7e82b7224321f4a0"
+      "bytes": 23514,
+      "sha256": "40a88adfc8b987ccc85442da514f72cc35523f163420e8bd5027dbcfb833ce56"
+    },
+    {
+      "path": "netlify.toml",
+      "bytes": 467,
+      "sha256": "207da4196208a14332214317d2e7e8b843ffe68c3093ca07783c4bb385d1e4a6"
     },
     {
       "path": "output/playwright/diagram-circular.png",
@@ -155,13 +170,13 @@
     },
     {
       "path": "physics-tests.cjs",
-      "bytes": 5216,
-      "sha256": "18a177f7e9c7e0e2c40e9b948258adcc65ee0d36afd9b84e45a8586ecf49bd5f"
+      "bytes": 5414,
+      "sha256": "2d5e755cb4e77b8c1ddb2aa5b56b64bd236ac28e192c398b1168f4c38c2a4cd5"
     },
     {
       "path": "physics-validation.json",
-      "bytes": 8303,
-      "sha256": "2b2263ea695915d0d6c89166008248945dccec8178e5c0e5ebab4e1654cd4c58"
+      "bytes": 8484,
+      "sha256": "f2bf9380b7f3ae7321989b17a97cc2020e85fd6636d2903c4239aae872885a8d"
     },
     {
       "path": "physics.js",
@@ -195,18 +210,18 @@
     },
     {
       "path": "teaching/optics-lecture.pdf",
-      "bytes": 1148251,
-      "sha256": "0944b84e0367c834cde29454d7a29bc8d23b5fab9cfd6358c2ea5093517ddd21"
+      "bytes": 1148582,
+      "sha256": "6a0eb4150589b65fa1065a755c37b32e00f6eaa58df5e9cd7544285bbec610e4"
     },
     {
       "path": "teaching/optics-lecture.pptx",
-      "bytes": 6735672,
-      "sha256": "ea2c7502459a7818a63e9331bac7f25042354789b4106933735e6e00578e4cca"
+      "bytes": 6751066,
+      "sha256": "d3af057beb61cb89ff3f54b103b656ce9aa76afb58911ec71a3976bd72b501ff"
     },
     {
       "path": "teaching/teaching-guide.md",
-      "bytes": 19595,
-      "sha256": "c8defc2c8493fcb257380b143b765da58e403568a65385e20965b9a475c3bf52"
+      "bytes": 19678,
+      "sha256": "2ee80e1c0bf5b82b04b0b67dc5415bd904aff488c412a0366901ba971bf5b2c0"
     },
     {
       "path": "vendor/THREE-LICENSE.txt",

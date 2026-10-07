@@ -73,8 +73,11 @@ def setup(name):
 def source(x=-3.3,y=0,z=1.25):
     mount(x,y,z);cylinder('Laser head',(x,y,z),.22,.8,navy,(1,0,0));cylinder('Laser aperture',(x+.415,y,z),.12,.025,green,(1,0,0));label('Laser label','MONOCHROMATIC',(-3.2,-.4,1.84),.15)
 
-sc=setup('01_Double_Slit');sc['lambda_nm']=550;sc['d_mm']=.25;sc['a_mm']=.05;sc['L_m']=1.5
-sc['physical_screen_half_width_mm']=24;sc['geometry_scale']='slits enlarged independently for teaching'
+double_params={'lambda_nm':550,'d_mm':.25,'a_mm':.05,'L_m':1.5}
+screen_half_width_mm=24
+sc=setup('01_Double_Slit')
+for key,value in double_params.items(): sc[key]=value
+sc['physical_screen_half_width_mm']=screen_half_width_mm;sc['geometry_scale']='slits enlarged independently for teaching'
 source();x=-.8;z=1.25
 mount(x,0,z)
 # Two long vertical apertures, separated in y. Do not use false dark marks.
@@ -82,17 +85,17 @@ for y0,y1 in [(-.85,-.24),(-.16,.16),(.24,.85)]:cube('Slit plate solid',(x,(y0+y
 cube('Top bridge',(x,0,z+.78),(.1,1.7,.10),metal,.008)
 cube('Bottom bridge',(x,0,z-.78),(.1,1.7,.10),metal,.008)
 label('Slit caption','TWO SLITS',(-.8,-.95,2.38),.2)
-label('Slit parameters','d = 0.25 mm   a = 0.05 mm',(-.8,-.94,2.08),.135)
+label('Slit parameters','d = %.3f mm   a = %.3f mm'%(double_params['d_mm'],double_params['a_mm']),(-.8,-.94,2.08),.135)
 ray('Incident guide',(-2.89,0,z),(x-.05,0,z),green,.023)
 for yy in [-.2,.2]:
     for dest in [-.9,0,.9]:ray('Wave path guide',(x+.06,yy,z),(3.0,dest,z),green,.008)
 mount(3.08,0,z);cube('Screen body',(3.08,0,z),(.12,2.85,1.8),metal,.045)
 # Physical y coordinate is in millimetres, converted to SI before phase calculation.
 nw,nh=1024,256;img=bpy.data.images.new('Calculated double slit irradiance',width=nw,height=nh,alpha=True)
-pixels=[];lam=550e-9;d=.25e-3;a=.05e-3;L=1.5
+pixels=[];lam=double_params['lambda_nm']*1e-9;d=double_params['d_mm']*1e-3;a=double_params['a_mm']*1e-3;L=double_params['L_m']
 row=[]
 for i in range(nw):
-    yy=(i/(nw-1)*2-1)*24e-3;s=yy/math.hypot(L,yy);beta=pi*a*s/lam
+    yy=(i/(nw-1)*2-1)*screen_half_width_mm*1e-3;s=yy/math.hypot(L,yy);beta=pi*a*s/lam
     envelope=(sin(beta)/beta)**2 if abs(beta)>1e-12 else 1
     intensity=envelope*cos(pi*d*s/lam)**2
     display=intensity**.5
@@ -103,23 +106,35 @@ uv=me.uv_layers.new();coords=[(0,0),(1,0),(1,1),(0,1)]
 for loop in me.loops:uv.data[loop.index].uv=coords[loop.vertex_index]
 o=bpy.data.objects.new('Analytical screen texture',me);sc.collection.objects.link(o)
 ma=bpy.data.materials.new('Irradiance visual mapping');ma.use_nodes=True;n=ma.node_tree.nodes;n.clear();tex=n.new('ShaderNodeTexImage');tex.image=img;em=n.new('ShaderNodeEmission');em.inputs['Strength'].default_value=.9;output=n.new('ShaderNodeOutputMaterial');ma.node_tree.links.new(tex.outputs['Color'],em.inputs['Color']);ma.node_tree.links.new(em.outputs[0],output.inputs['Surface']);o.data.materials.append(ma)
-label('Screen caption','COMPUTED IRRADIANCE',(3.0,-1.42,2.5),.15)
+label('Screen caption','FRAUNHOFER PATTERN | DISPLAY SQRT(I)',(3.0,-1.42,2.5),.13)
 label('Scene title','YOUNG / DOUBLE-SLIT',(0,-2.07,.35),.21)
 
-sc=setup('02_Refraction_Interface');sc['n1']=1.;sc['n2']=1.52;sc['incidence_deg']=35.;sc['refraction_deg']=math.degrees(math.asin(sin(math.radians(35))/1.52))
+refraction_params={'n1':1.,'n2':1.52,'incidence_deg':35.}
+sc=setup('02_Refraction_Interface')
+for key,value in refraction_params.items(): sc[key]=value
+sin_theta_t=sin(math.radians(refraction_params['incidence_deg']))*refraction_params['n1']/refraction_params['n2']
+tir=abs(sin_theta_t)>1
+sc['refraction_deg']='TIR' if tir else math.degrees(math.asin(sin_theta_t));sc['total_internal_reflection']=tir
+glass.node_tree.nodes.get('Principled BSDF').inputs['IOR'].default_value=refraction_params['n2']
 # Interface plane x=0. Incidence/refraction stay in horizontal x/y plane.
 cube('Glass medium',(1.50,0,1.08),(3,3.1,1.70),glass,.012)
 cube('Interface outline',(0,0,1.08),(.017,3.14,1.74),material('Interface edge',(.2,.48,.65),0,.3,0,.15),0)
-theta=math.radians(35);theta_t=math.asin(sin(theta)/1.52);zz=1.25
-origin=(0,0,zz);start=(-2.5,-2.5*math.tan(theta),zz);ref=(-2.5,2.5*math.tan(theta),zz);trans=(2.6,2.6*math.tan(theta_t),zz)
-ray('Incoming ray',start,origin,gold,.022);ray('Reflected ray',origin,ref,gold,.012);ray('Snell refracted ray',origin,trans,cyan,.022)
+theta=math.radians(refraction_params['incidence_deg']);zz=1.25
+origin=(0,0,zz);start=(-2.5,-2.5*math.tan(theta),zz);ref=(-2.5,2.5*math.tan(theta),zz)
+ray('Incoming ray',start,origin,gold,.022);ray('Reflected ray',origin,ref,gold,.012)
+if not tir:
+    theta_t=math.asin(sin_theta_t);trans=(2.6,2.6*math.tan(theta_t),zz);ray('Snell refracted ray',origin,trans,cyan,.022)
 for k in range(-10,11):ray('Interface normal dash',(k*.28,0,zz+.014),(k*.28+.13,0,zz+.014),white,.004)
-label('Air label','AIR  n = 1.00',(-2,-1.6,2.4),.21)
-label('Glass label','GLASS  n = 1.52',(1.6,-1.9,3.0),.21)
-label('Angle values','35.00 deg  ->  %.2f deg'%sc['refraction_deg'],(-.2,-2.05,3.5),.19)
+label('Air label','AIR  n = %.2f'%refraction_params['n1'],(-2,-1.6,2.4),.21)
+label('Glass label','GLASS  n = %.2f'%refraction_params['n2'],(1.6,-1.9,3.0),.21)
+label('Angle values','%.2f deg  ->  %s'%(refraction_params['incidence_deg'],('TOTAL INTERNAL REFLECTION' if tir else '%.2f deg'%sc['refraction_deg'])),(-.2,-2.05,3.5),.15 if tir else .19)
+label('Ray note','RAY TUBE BRIGHTNESS IS SCHEMATIC',(0,-1.55,.5),.13)
 label('Scene title','SNELL / FLAT INTERFACE',(0,-2.07,.35),.21)
 
-sc=setup('03_Polarization');sc['I0_after_first_polarizer']=1.;sc['analyzer_angle_deg']=45.;sc['transmission']=.5
+polarization_params={'I0_after_first_polarizer':1.,'analyzer_angle_deg':45.}
+polarization_params['transmission']=math.cos(math.radians(polarization_params['analyzer_angle_deg']))**2
+sc=setup('03_Polarization')
+for key,value in polarization_params.items(): sc[key]=value
 source(-3.3)
 def polarizer(x,angle,name):
     mount(x,0,1.25)
@@ -133,24 +148,25 @@ def polarizer(x,angle,name):
             pts.append((x,yy,zz))
         ray(name+' transmission axis',pts[0],pts[1],cyan if angle==0 else violet,.009)
     label(name+' label',name+'  %g deg'%angle,(x,-.88,2.35),.17)
-polarizer(-1.45,0,'POLARIZER');polarizer(1.1,45,'ANALYZER')
+polarizer(-1.45,0,'POLARIZER');polarizer(1.1,polarization_params['analyzer_angle_deg'],'ANALYZER')
 ray('Propagation guide',(-2.89,0,1.25),(3.2,0,1.25),green,.007)
-for side,(x0,x1,angle,amplitude,ma) in enumerate([(-1.3,.95,0,.38,cyan),(1.25,3.15,45,.38/math.sqrt(2),violet)]):
+analyzer_angle=polarization_params['analyzer_angle_deg'];analyzer_amp=math.cos(math.radians(analyzer_angle))
+for side,(x0,x1,angle,amplitude,ma) in enumerate([(-1.3,.95,0,.38,cyan),(1.25,3.15,analyzer_angle,.38*analyzer_amp,violet)]):
     prev=None
     for j in range(121):
         xx=x0+(x1-x0)*j/120;v=amplitude*sin(j/120*4*pi);a=math.radians(angle);pt=(xx,v*sin(a),1.25+v*cos(a))
         if prev:ray('Electric field schematic',prev,pt,ma,.011)
         prev=pt
-label('Output ratio','I / I0 = cos^2(45 deg) = 0.50',(1,-1.4,2.8),.18)
+label('Output ratio','I / I0 = cos^2(%.0f deg) = %.2f'%(analyzer_angle,polarization_params['transmission']),(1,-1.4,2.8),.18)
 label('Scene title','POLARIZATION / FIELD PROJECTION',(0,-2.07,.35),.21)
 
 names=[('01_Double_Slit','double-slit.png'),('02_Refraction_Interface','lens-bench.png'),('03_Polarization','polarization.png')]
 bpy.context.window.scene=bpy.data.scenes['01_Double_Slit']
 # Embedded scientific notes and editable custom values accompany named geometry.
 notes=bpy.data.texts.new('READ ME - models and controls')
-notes.write('Each scene has custom properties documenting parameters. Edit constants in build_scenes.py and rerun to regenerate dependent geometry and screen texture. Custom properties record values; they are not automatic drivers. Dimensions of apertures, apparatus and rays are independently enlarged for teaching. Cycles path tracing renders material/lighting, not coherent wave diffraction. Double slit uses exact sin(theta)=y/hypot(L,y), Fraunhofer model, and square-root display brightness. Source lambda 550nm, d .25mm, a .05mm, L 1.5m; screen crop ±24mm. Refraction ray is calculated via Snell n1=1,n2=1.52, angle35deg. Polarizer axes physically rotated45deg; amplitude after analyzer multiplied by cos45deg. Classical scalar idealized models only.')
+notes.write('Each scene has custom properties documenting parameters. Edit constants in build_scenes.py and rerun to regenerate dependent geometry and screen texture. Custom properties record values; they are not automatic drivers. Dimensions of apertures, apparatus and rays are independently enlarged for teaching. Cycles path tracing renders material/lighting, not coherent wave diffraction. Double slit uses exact sin(theta)=y/hypot(L,y), Fraunhofer model, and square-root display brightness. Default double slit: lambda %.0fnm, d %.3fmm, a %.3fmm, L %.2fm; screen crop ±%.0fmm. Default refraction: n1=%.2f, n2=%.2f, incidence %.2fdeg. Default polarizer analyzer angle %.2fdeg; field amplitude after analyzer is multiplied by cos(angle). Classical scalar idealized models only.' % (double_params['lambda_nm'],double_params['d_mm'],double_params['a_mm'],double_params['L_m'],screen_half_width_mm,refraction_params['n1'],refraction_params['n2'],refraction_params['incidence_deg'],polarization_params['analyzer_angle_deg']))
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(BASE,'blender','optics-lab.blend'))
-manifest={'blender_version':bpy.app.version_string,'blend_file':'blender/optics-lab.blend','reproducible_script':'blender/build_scenes.py','render_engine':'Cycles CPU','samples':96,'denoising':True,'resolution':[1440,900],'scenes':[],'limitations':['Authored ray tubes and electric-field shapes are enlarged teaching guides.','Cycles does not solve coherent wave interference: an analytical Fraunhofer image is embedded in the screen.','Scene custom properties record parameters. Rerun the build script after editing constants to regenerate dependent geometry.']}
+manifest={'blender_version':bpy.app.version_string,'blend_file':'blender/optics-lab.blend','reproducible_script':'blender/build_scenes.py','render_engine':'Cycles CPU','samples':96,'denoising':True,'resolution':[1440,900],'scenes':[],'limitations':['Authored ray tubes and electric-field shapes are enlarged teaching guides.','Cycles does not solve coherent wave interference: an analytical Fraunhofer image is embedded in the screen.','Rendered emission brightness is a visual map, not linear irradiance; the double-slit screen uses display sqrt(I).','Ray-tube thickness and brightness do not encode Fresnel power or polarization intensity.','Scene custom properties record parameters. Rerun the build script after editing constants to regenerate dependent geometry.']}
 for scene_name,filename in names:
     s=bpy.data.scenes[scene_name];bpy.context.window.scene=s;s.render.filepath=os.path.join(OUT,filename)
     bpy.ops.render.render(write_still=True)

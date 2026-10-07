@@ -8,6 +8,7 @@ node_modules/
 *.pid
 *.blend1
 *.blend2
+blender/__pycache__/
 
 # Generated QA artifacts; retain the diagrams used by the slide generator
 output/*

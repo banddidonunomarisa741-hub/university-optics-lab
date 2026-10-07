@@ -24,6 +24,7 @@ const s=.55/2,x=1000*s/Math.sqrt(1-s*s);
 close('Grating envelope at first principal peak',O.profile('grating',{lambda:550,d:2,a:.5,N:200,L:1},x),O.sinc(Math.PI*.25)**2,1e-11);
 close('Zero film thickness collapses interfaces',O.thinFilm({lambda:550,n0:1,n1:2,n2:1.5,t:0}).R,.04);
 close('Quarter-wave impedance matching AR',O.thinFilm({lambda:550,n0:1,n1:Math.sqrt(1.5),n2:1.5,t:550/(4*Math.sqrt(1.5))}).R,0);
+close('Thin-film phase change for 300nm thickness increase',O.thinFilm({lambda:550,n0:1,n1:1.5,n2:1.52,t:600}).phase-O.thinFilm({lambda:550,n0:1,n1:1.5,n2:1.52,t:300}).phase,4*Math.PI*1.5*300/550);
 close('Matched film no reflection',O.thinFilm({lambda:550,n0:1.5,n1:1.5,n2:1.5,t:321}).R,0);
 close('Newton reflected contact dark',O.profile('newton',{gap:0},0),0);
 close('Newton transmitted contact bright',O.profile('newton',{gap:1},0),1);
