@@ -2,6 +2,10 @@
 
 14 个可调参数光学实验，配套 26 页 PPT / PDF、教师讲义以及 3 个 Blender Cycles 场景。
 
+- 公开仓库：[github.com/banddidonunomarisa741-hub/university-optics-lab](https://github.com/banddidonunomarisa741-hub/university-optics-lab)
+- 稳定网页入口：[GitHub Pages](https://banddidonunomarisa741-hub.github.io/university-optics-lab/)
+- Netlify：仓库已加入 `netlify.toml`，完成 Netlify 账号授权后可从仓库根目录持续部署。
+
 ![Blender 双缝实验渲染](assets/renders/double-slit.png)
 
 ## 开始使用
