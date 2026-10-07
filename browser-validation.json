@@ -50,10 +50,21 @@
   },
   "physicsValidation": {
     "status": "PASS",
-    "checks": 8887,
-    "benchmarkCount": 63
+    "checks": 9556,
+    "benchmarkCount": 64
   },
   "validityNotes": {
     "all14Modules": true
+  },
+  "fourierA": {
+    "status": "PASS",
+    "fftGrid": 256,
+    "visibleControlCounts": true,
+    "fourierPanel": true,
+    "formulaHtml": true,
+    "abbePreset": true,
+    "filterSelect": true,
+    "logScaleButton": true,
+    "mobileOverflow": false
   }
 }

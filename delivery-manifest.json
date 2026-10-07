@@ -35,8 +35,8 @@
     },
     {
       "path": "app.js",
-      "bytes": 25897,
-      "sha256": "13dcd42e8fc2ec40e1959715d467e78fec08dcedcfc8c079e0df097eca71d5fc"
+      "bytes": 29946,
+      "sha256": "3c06691fb64f188d4e6a1a3cb6d938ba58546914ab8403c5575c4b3c621926a0"
     },
     {
       "path": "assets/renders/double-slit.png",
@@ -70,18 +70,18 @@
     },
     {
       "path": "browser-validation.json",
-      "bytes": 1604,
-      "sha256": "e37b92d65ccaf70fc858855eded2b845c2f547c4ee5bee09017cb07b65539029"
+      "bytes": 1858,
+      "sha256": "78723d99d275a30e709926f0a78e5760845823c595662cd4c035b6f26150d398"
     },
     {
       "path": "index.html",
-      "bytes": 6901,
-      "sha256": "f28b1131ba42b757f5f0864af920f3d73539c7ecdcf11ef4aaef96c58c353225"
+      "bytes": 7301,
+      "sha256": "28113e1b34cee686f3fcbf4d1f732de2f0d16b5554e6deec575e1a7825743f7c"
     },
     {
       "path": "lesson-content.js",
-      "bytes": 23514,
-      "sha256": "40a88adfc8b987ccc85442da514f72cc35523f163420e8bd5027dbcfb833ce56"
+      "bytes": 24287,
+      "sha256": "0572a87ceb6565c943b71b2dc3a5aa408e5f9c752712d057070f3d11a1c6e38c"
     },
     {
       "path": "netlify.toml",
@@ -90,73 +90,73 @@
     },
     {
       "path": "output/playwright/diagram-circular.png",
-      "bytes": 22843,
-      "sha256": "bd1cde980226a02a99fed7c0baba25e148d7863efd63595b07db9d9fd246d612"
+      "bytes": 26507,
+      "sha256": "1e6c5bc6ee75fbd92dac6232fee1b817835b308478b70818f4cfd4cc29b75831"
     },
     {
       "path": "output/playwright/diagram-double.png",
-      "bytes": 33475,
-      "sha256": "24a302c681c675728a709b65610bb5404255ab51c8b6eaa7e70b412fc140a190"
+      "bytes": 36300,
+      "sha256": "9dbe02b4f9a9c46f497803ee7083fbf3e4c6d67be090b58c57002f05a610e8e6"
     },
     {
       "path": "output/playwright/diagram-film.png",
-      "bytes": 12521,
-      "sha256": "23ba60e65c5cd9a10604c76ca3e9b625d4811e35a4314b2f99fde71778855e95"
+      "bytes": 17737,
+      "sha256": "e6784f11c5c57e019c7551afbd3728ed93556cd9da2d9483253740de5a4b8761"
     },
     {
       "path": "output/playwright/diagram-fourier.png",
-      "bytes": 25860,
-      "sha256": "b949ce82f79c068e8bd1ef1ac527a6a1c8e8282acf673e8587148819a58cedf7"
+      "bytes": 33153,
+      "sha256": "c6c32b95a7fdbc3413361b1db9c5f2696ff86f4adb477f0ba5ca4f7a3ef93e0c"
     },
     {
       "path": "output/playwright/diagram-gaussian.png",
-      "bytes": 10497,
-      "sha256": "a52ddbdfdb8bf56a569b66f315b1b4a15938a88f6d71bd27d1a80a093e69b4b3"
+      "bytes": 21664,
+      "sha256": "f5e8dc820e8f4064dc145e1d2445882d9aa90a2bdced3d52fe23aa34f483fe7c"
     },
     {
       "path": "output/playwright/diagram-grating.png",
-      "bytes": 23407,
-      "sha256": "b9ca9ec9e756f8380c164251f073b45af61e0a2b550c0af1768fab04df28473b"
+      "bytes": 27040,
+      "sha256": "ec31a5fcdf9ee00740311bc5c6dd38c6b8767eb1e0ef7bfad9b620f388b121e7"
     },
     {
       "path": "output/playwright/diagram-lens.png",
-      "bytes": 21575,
-      "sha256": "4ee9fe875b8f2082a9f496eb822fc264bdbda692d525d1d7b0a603b93aec20c3"
+      "bytes": 28016,
+      "sha256": "cb84c7e2d562811071b41af4af1831c8890dff1e9482bc27a1a598849289de24"
     },
     {
       "path": "output/playwright/diagram-michelson.png",
-      "bytes": 9946,
-      "sha256": "74aa6d0dfaec934e460a9349e74a69c41e459f8d948d6d3aeaa03d39f2f19686"
+      "bytes": 15044,
+      "sha256": "314f2653dfa633d906f78e8fb48bbb56c9b9e3a217728dc04600310e8c0073f5"
     },
     {
       "path": "output/playwright/diagram-newton.png",
-      "bytes": 15858,
-      "sha256": "53759ec570b87c4dc0c671e08e2a50df6dc7b237c6b97faf196a31ece5130534"
+      "bytes": 20031,
+      "sha256": "7ab6e31171787934a783bf1c4e6dbfbfdf09d91955a6bda0168709d6fc0cd8c6"
     },
     {
       "path": "output/playwright/diagram-polarization.png",
-      "bytes": 18684,
-      "sha256": "4b7ccf75f8757112dad6af303c318799400a35c13c142693b3fb4e4e85841908"
+      "bytes": 23512,
+      "sha256": "7a2125c9ed6640e96e829cf034c24eca7f264c2c1485ac6027f5f8018284caee"
     },
     {
       "path": "output/playwright/diagram-single.png",
-      "bytes": 22555,
-      "sha256": "78aa0143823621b7a2ab424ada54a55ceb8cad178f49cc70e304b561fb645ec7"
+      "bytes": 26229,
+      "sha256": "4a1b42000809069e0071f8f222d45235602f73fe6f9bf762a65bc0cbd9efe179"
     },
     {
       "path": "output/playwright/diagram-snell.png",
-      "bytes": 13968,
-      "sha256": "f1ba79cd0aa983c947bd05b15e5cbd95f1f7645bcdc4b64801521fe90d6899d4"
+      "bytes": 18998,
+      "sha256": "ed537ed82273d6e4fa90556e831373af921a347904c27b1d3d9f91ad72ba0071"
     },
     {
       "path": "output/playwright/diagram-waveplate.png",
-      "bytes": 17101,
-      "sha256": "08c7b3bedacdd199879bc6578cc8124e866d3fa8567ffe9bbb687ffd1df2d299"
+      "bytes": 24115,
+      "sha256": "55bac06df2e8065ac1709861cee8c005b24350d13f67f0e769c1c845deb55870"
     },
     {
       "path": "output/playwright/diagram-waves.png",
-      "bytes": 26406,
-      "sha256": "808553f6ee977c448203ef1934ac2867dbc3293f9c17746cc2989e80ab4a2133"
+      "bytes": 31065,
+      "sha256": "6b6417bf469fa978159531bb80363fe246dfa72a3a2ea5ec9d1f0fa349d0380b"
     },
     {
       "path": "package-lock.json",
@@ -170,23 +170,23 @@
     },
     {
       "path": "physics-tests.cjs",
-      "bytes": 5470,
-      "sha256": "118f8042ca04fcb0e5e9843183d588e7f0bdac35c753df0028166516bfa6f937"
+      "bytes": 8352,
+      "sha256": "6323a9cfbccdc0e57064103b7e8e13c5f9ffdd90f8c59c4475b1937fa993610e"
     },
     {
       "path": "physics-validation.json",
-      "bytes": 8805,
-      "sha256": "592f72202afb59dbe26533837713b6c2f25b7e3c15ae82a959ecf6c89a356991"
+      "bytes": 8952,
+      "sha256": "34cdc30f0ef39ab17da7b8cb3e2f85542059a4fea7c0e5db64bc180719714be7"
     },
     {
       "path": "physics.js",
-      "bytes": 14573,
-      "sha256": "377428b3363a7aad1b5399c152739c5298e0b3d4f57c51f206e47cfe8d4956b0"
+      "bytes": 23202,
+      "sha256": "b605a7edc59e87cce58371d8ac071cc4bb1395c5538d3fae050e837cce424762"
     },
     {
       "path": "scenes.js",
-      "bytes": 24575,
-      "sha256": "242192a65a8798dde83f2b0f1ca711696f1bb05d7c178217a113f17ae0ccabbe"
+      "bytes": 27104,
+      "sha256": "e14922e871355e2dd186452f693176a9f9ccfe2557648e1722d17ee0ae8fd043"
     },
     {
       "path": "serve.cjs",
@@ -200,8 +200,8 @@
     },
     {
       "path": "styles.css",
-      "bytes": 16962,
-      "sha256": "e7d0e2d7604341e3b1bdf0a07e3c9ad108c728b6f061be8b9221155a3ca0b8d1"
+      "bytes": 17101,
+      "sha256": "6b822d7d730eb0f337f5396ace0ceea364d2f7bc7edeabcc559eba97f9754bc4"
     },
     {
       "path": "teaching/build_ppt.js",

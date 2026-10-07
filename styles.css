@@ -10,6 +10,7 @@
 
 @media(max-width:700px){.stage{height:280px}.live-observation{align-self:start}.model-badge{align-self:start}}
 .presenting .parameters{max-height:calc(100vh - 165px);overflow:auto}
+#range-warning{color:#a86532;background:#fff3e7;border:1px solid #f0c99f;border-radius:5px;padding:3px 7px;font-size:10px;cursor:pointer}
 @media(max-width:700px){.presenting .parameters{max-height:none}}
 
 @media(min-width:1001px){.presenting .stage{height:calc(100vh - 560px);min-height:280px}}

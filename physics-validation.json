@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "checks": 8887,
-  "benchmarkCount": 63,
+  "checks": 9556,
+  "benchmarkCount": 64,
   "benchmarks": [
     {
       "test": "sinc removable zero",
@@ -380,6 +380,12 @@
       "actual": 1.5195743635847466e-33,
       "expected": 0,
       "tolerance": 1e-10
+    },
+    {
+      "test": "2D FFT Parseval n=8",
+      "actual": 74.17692696913478,
+      "expected": 74.17692696913477,
+      "tolerance": 1e-12
     }
   ]
 }
