@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "checks": 8885,
-  "benchmarkCount": 61,
+  "checks": 8887,
+  "benchmarkCount": 63,
   "benchmarks": [
     {
       "test": "sinc removable zero",
@@ -19,37 +19,49 @@
       "test": "Bessel J1 reference x=1",
       "actual": 0.4400505857449335,
       "expected": 0.4400505857449335,
-      "tolerance": 2e-10
+      "tolerance": 2e-12
     },
     {
       "test": "Bessel J1 reference x=5",
       "actual": -0.32757913759146506,
       "expected": -0.3275791375914652,
-      "tolerance": 2e-10
+      "tolerance": 2e-12
     },
     {
       "test": "Bessel J1 reference x=10",
       "actual": 0.04347274616879089,
       "expected": 0.04347274616886144,
-      "tolerance": 2e-10
+      "tolerance": 2e-12
     },
     {
       "test": "Bessel J1 reference x=12",
       "actual": -0.22344710449157862,
       "expected": -0.2234471044906276,
-      "tolerance": 2e-10
+      "tolerance": 2e-12
     },
     {
       "test": "Bessel J1 reference x=20",
       "actual": 0.06683312417585033,
       "expected": 0.06683312417585005,
-      "tolerance": 2e-10
+      "tolerance": 2e-12
     },
     {
       "test": "Bessel J1 reference x=100",
       "actual": -0.07714535201411228,
       "expected": -0.07714535201411216,
-      "tolerance": 2e-10
+      "tolerance": 2e-12
+    },
+    {
+      "test": "Bessel J1 reference x=1000",
+      "actual": 0.00472831190708902,
+      "expected": 0.004728311907089524,
+      "tolerance": 2e-12
+    },
+    {
+      "test": "Bessel J1 reference x=10000",
+      "actual": 0.003647450755528111,
+      "expected": 0.0036474507555295803,
+      "tolerance": 2e-12
     },
     {
       "test": "Airy origin",

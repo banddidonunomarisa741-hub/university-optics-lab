@@ -5,7 +5,7 @@
 const PI=Math.PI,TAU=2*PI,C=299792458,rad=x=>x*PI/180,clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 function sinc(x){return Math.abs(x)<1e-5?1-x*x/6+x**4/120:Math.sin(x)/x;}
 /* Power series near zero; Poincare expansion at large x. Benchmark against
-   high precision Bessel J1 at 0..1000 in physics-tests.cjs. */
+   high precision Bessel J1 at small and large x through 10000 in physics-tests.cjs. */
 function besselJ1(x){if(x===0)return 0;const a=Math.abs(x);let r;if(a<12){let term=a/2,sum=term,correction=0;for(let k=1;k<90;k++){term*=-a*a/(4*k*(k+1));const adjusted=term-correction,next=sum+adjusted;correction=(next-sum)-adjusted;sum=next;if(Math.abs(term)<1e-17)break;}r=sum;}else{let term=1,even=1,odd=0;for(let k=1;k<=18;k++){term*=(4-(2*k-1)**2)/(8*k*a);if(k%2)odd+=(k%4===1?1:-1)*term;else even+=(k%4===0?1:-1)*term;}const chi=a-3*PI/4;r=Math.sqrt(2/(PI*a))*(Math.cos(chi)*even-Math.sin(chi)*odd);}return x<0?-r:r;}
 function wavelengthRGB(w){w=clamp(w,380,780);let r=0,g=0,b=0;if(w<440){r=(440-w)/60;b=1;}else if(w<490){g=(w-440)/50;b=1;}else if(w<510){g=1;b=(510-w)/20;}else if(w<580){r=(w-510)/70;g=1;}else if(w<645){r=1;g=(645-w)/65;}else r=1;const factor=w<420?.3+.7*(w-380)/40:w>700?.3+.7*(780-w)/80:1;return {r:Math.pow(r*factor,.8),g:Math.pow(g*factor,.8),b:Math.pow(b*factor,.8)};}
 const definitions={

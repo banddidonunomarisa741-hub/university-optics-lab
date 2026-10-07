@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),O=require('./physics.js');
 let checks=0;const reports=[];
 function close(label,actual,expected,tol=1e-10){assert.ok(Math.abs(actual-expected)<=tol,`${label}: ${actual}, expected ${expected}`);checks++;reports.push({test:label,actual,expected,tolerance:tol});}
 close('sinc removable zero',O.sinc(0),1);close('sinc first null',O.sinc(Math.PI),0);
-for(const [x,reference] of [[1,.4400505857449335],[5,-.3275791375914652],[10,.04347274616886144],[12,-.2234471044906276],[20,.06683312417585005],[100,-.07714535201411216]])close('Bessel J1 reference x='+x,O.besselJ1(x),reference,2e-10);
+for(const [x,reference] of [[1,.4400505857449335],[5,-.3275791375914652],[10,.04347274616886144],[12,-.2234471044906276],[20,.06683312417585005],[100,-.07714535201411216],[1000,.004728311907089524],[10000,.0036474507555295803]])close('Bessel J1 reference x='+x,O.besselJ1(x),reference,2e-12);
 close('Airy origin',O.airy(0),1);close('Airy first null q=3.8317059702',O.airy(3.8317059702075125),0,1e-18);
 close('Snell air/glass 30deg',O.fresnel(1,1.5,30).angle,19.47122063449069);
 close('Normal-incidence glass R',O.fresnel(1,1.5,0).R,.04);

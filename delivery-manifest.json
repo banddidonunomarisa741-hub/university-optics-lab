@@ -35,8 +35,8 @@
     },
     {
       "path": "app.js",
-      "bytes": 24779,
-      "sha256": "5154588975f76501c81595ba6d9079fb275fada086c03f57cc6c8bf00302ba1e"
+      "bytes": 25897,
+      "sha256": "13dcd42e8fc2ec40e1959715d467e78fec08dcedcfc8c079e0df097eca71d5fc"
     },
     {
       "path": "assets/renders/double-slit.png",
@@ -70,13 +70,13 @@
     },
     {
       "path": "browser-validation.json",
-      "bytes": 1553,
-      "sha256": "6e04958736351e8c5ab1c2c2335c016be0cdf8864eabdf2acc54fea30031afe3"
+      "bytes": 1604,
+      "sha256": "e37b92d65ccaf70fc858855eded2b845c2f547c4ee5bee09017cb07b65539029"
     },
     {
       "path": "index.html",
-      "bytes": 6882,
-      "sha256": "0ed4770c1ebaf61ce627c9875f0e21bb8a306cc61c6ffb054efb093bd58c3d9d"
+      "bytes": 6901,
+      "sha256": "f28b1131ba42b757f5f0864af920f3d73539c7ecdcf11ef4aaef96c58c353225"
     },
     {
       "path": "lesson-content.js",
@@ -170,18 +170,18 @@
     },
     {
       "path": "physics-tests.cjs",
-      "bytes": 5414,
-      "sha256": "2d5e755cb4e77b8c1ddb2aa5b56b64bd236ac28e192c398b1168f4c38c2a4cd5"
+      "bytes": 5470,
+      "sha256": "118f8042ca04fcb0e5e9843183d588e7f0bdac35c753df0028166516bfa6f937"
     },
     {
       "path": "physics-validation.json",
-      "bytes": 8484,
-      "sha256": "f2bf9380b7f3ae7321989b17a97cc2020e85fd6636d2903c4239aae872885a8d"
+      "bytes": 8805,
+      "sha256": "592f72202afb59dbe26533837713b6c2f25b7e3c15ae82a959ecf6c89a356991"
     },
     {
       "path": "physics.js",
-      "bytes": 14549,
-      "sha256": "dd607dee1ac7154eaf0c719a2187c07c3257cce9a852fb7582544938589f5839"
+      "bytes": 14573,
+      "sha256": "377428b3363a7aad1b5399c152739c5298e0b3d4f57c51f206e47cfe8d4956b0"
     },
     {
       "path": "scenes.js",

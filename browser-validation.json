@@ -50,7 +50,10 @@
   },
   "physicsValidation": {
     "status": "PASS",
-    "checks": 8885,
-    "benchmarkCount": 61
+    "checks": 8887,
+    "benchmarkCount": 63
+  },
+  "validityNotes": {
+    "all14Modules": true
   }
 }
